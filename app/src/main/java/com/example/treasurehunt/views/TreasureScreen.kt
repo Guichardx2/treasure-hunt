@@ -24,7 +24,10 @@ fun TreasureScreen( navController: NavController ) {
         CustomText(text = "🎉 Parabéns! Você encontrou o tesouro! 🎉")
         CustomButton(
             text = "Voltar para o início",
-            onClick = { navController.navigate(Screen.Home.route) },
+            onClick = {
+                navController.popBackStack(Screen.Home.route, inclusive = false)
+                navController.navigate(Screen.Home.route)
+            },
         )
 
         Image(
